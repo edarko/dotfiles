@@ -1,10 +1,15 @@
-:set autoindent
+set autoindent
 :set cindent
+set shiftwidth=2
 :set fillchars+=vert:\ 
 execute pathogen#infect()
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 au VimEnter *  NERDTree
-syntax on
-let g:NERDTreeWinSize = 35 
+let g:NERDTreeWinSize = 30 
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_tabline = 1
@@ -21,97 +26,79 @@ let g:colors_name="bulldog"
  
 " Basic -------------------------------------------
  
-hi Normal               ctermfg=15      ctermbg=none    cterm=none
-hi NonText              ctermfg=15      ctermbg=none    cterm=none
-hi Directory            ctermfg=208     ctermbg=none    cterm=bold
-hi SpecialKey           ctermfg=208     ctermbg=none    cterm=none
-hi LineNr               ctermfg=208     ctermbg=none     cterm=none
-hi IncSearch            ctermfg=none    ctermbg=none    cterm=reverse
-hi Search               ctermfg=16      ctermbg=208     cterm=reverse
-hi Visual               ctermfg=16      ctermbg=208     cterm=none
-hi VisualNOS            ctermfg=none    ctermbg=none    cterm=bold
-hi ModeMsg              ctermfg=208     ctermbg=none    cterm=none
-hi MoreMsg              ctermfg=208     ctermbg=none    cterm=none
-hi Question             ctermfg=208     ctermbg=none    cterm=none
-hi ErrorMsg             ctermfg=16      ctermbg=208     cterm=none
-hi WarningMsg           ctermfg=208     ctermbg=none    cterm=none
-hi WildMenu             ctermfg=16      ctermbg=208     cterm=none
-hi Folded               ctermfg=102     ctermbg=none    cterm=none
-hi FoldColumn           ctermfg=16      ctermbg=208     cterm=none
-hi DiffAdd              ctermfg=16      ctermbg=15      cterm=bold
-hi DiffChange           ctermfg=16      ctermbg=208     cterm=bold
-hi DiffDelete           ctermfg=16      ctermbg=208     cterm=bold
-hi DiffText             ctermfg=16      ctermbg=208     cterm=bold
-hi StatusLine           ctermfg=15      ctermbg=236     cterm=bold
-hi StatusLineNC         ctermfg=102     ctermbg=236     cterm=none
-hi VertSplit            ctermfg=255     ctermbg=233    cterm=none
-hi Title                ctermfg=15      ctermbg=none    cterm=bold
-hi MatchParen           ctermfg=16      ctermbg=208     cterm=none
+hi Cursor	     ctermbg=255 ctermfg=16  cterm=none
+hi CursorLine     ctermbg=0 cterm=none
+hi CursorLineNr     ctermbg=66 ctermfg=0 cterm=none
+hi CursorIM	     ctermbg=60 ctermfg=255  cterm=none
+hi Directory	  ctermfg=110  cterm=none
+hi DiffAdd		  ctermfg=43  cterm=none
+hi DiffChange	  ctermfg=128 cterm=none
+hi DiffDelete	  ctermfg=209 cterm=none
+hi DiffText	      ctermfg=252 cterm=none
+hi ErrorMsg	      ctermfg=197 cterm=none
+hi VertSplit	  ctermfg=61 cterm=none
+hi Folded		 ctermbg=17  ctermfg=75  cterm=none
+hi FoldColumn	  ctermfg=252 cterm=none
+hi IncSearch       ctermbg=60 ctermfg=231 cterm=none
+hi LineNr		 ctermbg=none ctermfg=none cterm=none
+hi ModeMsg		  ctermfg=252 cterm=none
+hi MoreMsg		  ctermfg=252 cterm=none
+hi NonText		 ctermbg=none ctermfg=252 cterm=none
+hi Question	      ctermfg=252 cterm=none
+hi Search		  ctermfg=252 cterm=none
+hi SpecialKey	  ctermfg=252 cterm=none
+hi StatusLine	 ctermbg=67 ctermfg=0 cterm=none
+hi StatusLineNC	  ctermfg=0 cterm=none
+hi Title		  ctermfg=222 cterm=none
+hi Visual	     cterm=inverse
+hi VisualNOS	  ctermfg=252 cterm=none
+hi WarningMsg	  ctermfg=252 cterm=none
+hi WildMenu	      ctermfg=252 cterm=none
+hi Menu		      ctermfg=252 cterm=none
+hi Scrollbar	 ctermbg=16  ctermfg=241 cterm=none
+hi Tooltip		  ctermfg=252 cterm=none
+hi CursorColumn   ctermbg=233 cterm=none
+hi VertSplit      ctermfg=255 ctermbg=233  cterm=none
+hi TabLineFill    ctermfg=238 cterm=none
+hi TabLineSel     ctermbg=0 cterm=none
 hi TabLineFill          ctermfg=250     ctermbg=none    cterm=none
-hi TabLineSel           ctermfg=none    ctermbg=208     cterm=bold
-hi TabLine              ctermfg=none     ctermbg=none    cterm=none
- 
-" Syntax ------------------------------------------
- 
-hi Comment              ctermfg=208     ctermbg=none    cterm=bold
-hi Function             ctermfg=208     ctermbg=none    cterm=bold
-hi PreProc              ctermfg=15      ctermbg=none    cterm=none
-hi Constant             ctermfg=15      ctermbg=none    cterm=none
-hi Type                 ctermfg=246     ctermbg=none    cterm=none
-hi Statement            ctermfg=246     ctermbg=none    cterm=none
-hi Identifier           ctermfg=15      ctermbg=none    cterm=none
-hi String               ctermfg=208     ctermbg=none    cterm=none
-hi Ignore               ctermfg=246     ctermbg=none    cterm=bold
-hi Special              ctermfg=208     ctermbg=none    cterm=none
-"hi Error               ctermfg=16      ctermbg=208     cterm=none
-hi Error                ctermfg=none    ctermbg=none    cterm=none
-hi Todo                 ctermfg=15      ctermbg=none    cterm=none
-hi Underlined           ctermfg=208     ctermbg=none    cterm=underline
-hi Number               ctermfg=15      ctermbg=none    cterm=none
- 
-" Syntax Links ------------------------------------
- 
-hi link Character       Constant
-hi link Boolean         Constant
-hi link Float           Number
-hi link Number          Constant
-hi link Conditional     Statement
-hi link Repeat          Statement
-hi link Label           Statement
-hi link Keyword         Statement
-hi link Operator        Statement
-hi link Exception       Error
-hi link Include         PreProc
-hi link Define          PreProc
-hi link Macro           PreProc
-hi link PreCondit       PreProc
-hi link StorageClass    Type
-hi link Structure       Type
-hi link Typedef         Type
-hi link Tag             Special
-hi link SpecialChar     Special
-hi link Delimiter       Special
-hi link SpecialComment  Special
-hi link Debug           Special
-
-" VimDiff
-hi DiffAdd	ctermfg=251	ctermbg=22	cterm=NONE
-hi DiffChange	ctermfg=251	ctermbg=98	cterm=NONE
-hi DiffDelete	ctermfg=88	ctermbg=88	cterm=NONE
-hi DiffText	ctermfg=251	ctermbg=NONE	cterm=NONE
+hi TabLineSel           ctermfg=none    ctermbg=232     cterm=bold
+hi TabLine              ctermfg=none    ctermbg=none    cterm=none
 
 
-" Special for Java
-hi link javaScopeDecl         Identifier
-hi link javaCommentTitle      javaDocSeeTag
-hi link javaDocTags           javaDocSeeTag
-hi link javaDocParam          javaDocSeeTag
-hi link javaDocSeeTagParam    javaDocSeeTag
+" syntax highlighting groups
+hi PreProc	      ctermfg=185 cterm=none
+hi Special	      ctermfg=135 cterm=none   "<?
 
-hi  javaDocSeeTag ctermfg=229 ctermbg=NONE cterm=NONE
+hi Statement	  ctermfg=15 cterm=none   "if
+hi Delimiter        ctermfg=67   cterm=none  "(
+hi Function         ctermfg=134   cterm=none
+hi Type		      ctermfg=135 cterm=none   "->
+hi Operator         ctermfg=215  cterm=none    "$
+hi Identifier     ctermfg=168  cterm=none   "prom
+hi Constant	      ctermfg=67 cterm=none
 
+hi String           ctermfg=61  cterm=none
+hi Comment        ctermfg=25 term=none
 
-" Special for Python
-hi link pythonStatement Identifier
-hi pythonBuiltin	ctermfg=42	ctermbg=NONE	cterm=UNDERLINE
-hi pythonOperator	ctermfg=166	ctermbg=NONE	cterm=NONE
+hi Underlined     ctermfg=110 cterm=underline
+hi Error		  ctermbg=0 ctermfg=196 cterm=underline
+hi Todo		      ctermbg=0 ctermfg=220 cterm=none
+hi Ignore           ctermfg=252   cterm=none
+hi MatchParen     ctermbg=13  ctermfg=0   cterm=bold 
+hi Exception      ctermbg=0  ctermfg=196   cterm=none 
+
+" -> HTML-specific
+hi htmlBold                   ctermfg=252   cterm=bold
+hi htmlBoldItalic             ctermfg=252   cterm=bold,italic
+hi htmlBoldUnderline          ctermfg=252   cterm=bold,underline
+hi htmlBoldUnderlineItalic    ctermfg=252   cterm=bold,underline,italic
+hi htmlItalic                 ctermfg=252   cterm=italic
+hi htmlUnderline              ctermfg=252   cterm=underline
+hi htmlUnderlineItalic        ctermfg=252   cterm=underline,italic
+
+hi htmlEndTag ctermfg=135 cterm=none
+hi htmlTag ctermfg=135 cterm=none
+hi htmlTagName ctermfg=141 cterm=none
+hi htmlStatement ctermfg=252 cterm=none
+

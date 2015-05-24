@@ -18,7 +18,7 @@ urxvt*geometry:         95x25
 urxvt.urgentOnBell:     false
 urxvt.visualBell:       false
 URxvt.depth: 		32
-URxvt.background: 	[80]#000000
+URxvt.background: 	[85]#000000
 !urxvt.borderLess:      false
 !urxvt.borderWidth:     1
 !urxvt.internalBorder:  0

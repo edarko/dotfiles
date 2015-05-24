@@ -2,6 +2,12 @@
 
 xrdb -merge ~/.Xresources
 
+# execute xcompmgr
+# xcompmgr -c &
+
+# execute conky
+  conky &
+
 # Set keyboard Layout
   setxkbmap -layout gb
 
@@ -26,7 +32,7 @@ while true; do
 	  done &
 
 # Set wallpaper
-  feh --bg-scale ~/Pictures/.background/bg3.jpg
+  feh --bg-scale ~/Pictures/archey.png
 
 # run Xresources
 #  [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources

@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 archey3
-xcompmgr -c &
+#xcompmgr -c &
 setxkbmap -layout gb
 export TERM=rxvt
 export EDITOR=vim
@@ -13,6 +13,9 @@ PS2="\["$yellow"\]\$((LCNT++)):\["$reset"\] "
 PS3="Choice?: "
 PS4=$PS2
 
+# Ruby path
+export PATH=/home/greyman/.gem/ruby/2.2.0/bin:$PATH
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -20,10 +23,11 @@ PS4=$PS2
 alias reload='source ~/.bashrc'
 alias reloadx='xrdb -merge ~/.Xresources'
 alias ls='ls --color=auto'
-alias reboot='sudo shutdown -r now'
-alias shutdown='sudo shutdown -h now'
-alias refresh='pacman -Syu'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown'
+alias refresh='sudo pacman -Syu'
 alias clean='pacman -Sc'
+alias sleep='systemctl hybrid-sleep'
 
 # Functions
 
